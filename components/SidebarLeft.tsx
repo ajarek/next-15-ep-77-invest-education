@@ -1,20 +1,128 @@
 'use client'
 
-import { ShoppingBasket, House, KeyRound } from 'lucide-react'
+import { ShoppingBasket, House, KeyRound, Contact, Users } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
-
-
+import { ModeToggle } from './ModeToggle'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 
 const SidebarLeft = () => {
-  
-  
   return (
-    <div className='min-h-[calc(100vh-32px)] max-w-16 w-full rounded-xl px-4 py-6 gap-6 flex flex-col items-center bg-primary'>
-      <Link href='/' className='bg-background w-10 h-10 rounded-full flex justify-center items-center hover:text-background hover:bg-black  transition-all delay-200'><KeyRound size={32} strokeWidth={1} /></Link>
-      <Link href='/' className='bg-background w-10 h-10 rounded-full flex justify-center items-center hover:text-background hover:bg-black  transition-all delay-200'><ShoppingBasket size={32} strokeWidth={1} /></Link>
-      <Link href='/' className='bg-background w-10 h-10 rounded-full flex justify-center items-center hover:text-background hover:bg-black  transition-all delay-200'><House  size={32} strokeWidth={1} /></Link>
-       
+    <div className='min-h-[calc(100vh-32px)] max-w-16 w-full rounded-xl px-4 py-8 gap-8 flex flex-col items-center bg-primary'>
+      <Link
+        href='/'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200'
+      >
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <ModeToggle />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Tło</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </Link>
+      <Link
+        href='/'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200'
+      >
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              {' '}
+              <KeyRound
+                size={32}
+                strokeWidth={1}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Logowanie</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </Link>
+      <Link
+        href='/'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200'
+      >
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              {' '}
+              <ShoppingBasket
+                size={32}
+                strokeWidth={1}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Koszyk</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </Link>
+      <Link
+        href='/'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200'
+      >
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              {' '}
+              <House
+                size={32}
+                strokeWidth={1}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Strona główna</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </Link>
+      <Link
+        href='/'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200'
+      >
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              {' '}
+              <Contact
+                size={32}
+                strokeWidth={1}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Kontakt</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </Link>
+      <Link
+        href='/'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200'
+      >
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <Users
+                size={32}
+                strokeWidth={1}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>O nas</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </Link>
     </div>
   )
 }
