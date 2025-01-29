@@ -1,6 +1,6 @@
-'use client'
 
-import { ShoppingBasket, House, KeyRound, Contact, Users } from 'lucide-react'
+
+import { ShoppingBasket, House,  Contact, Users } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { ModeToggle } from './ModeToggle'
@@ -10,8 +10,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import Logout from './Logout'
+import { auth } from '@/app/api/auth/auth'
 
-const SidebarLeft = () => {
+const SidebarLeft = async () => {
+  const session = await auth()
+  
+  console.log(session)
   return (
     <div className='min-h-[calc(100vh-32px)] max-w-16 w-full rounded-xl px-4 py-8 gap-8 flex flex-col items-center bg-primary'>
       <Link
@@ -29,25 +34,9 @@ const SidebarLeft = () => {
           </Tooltip>
         </TooltipProvider>
       </Link>
-      <Link
-        href='/'
-        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200'
-      >
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger>
-              {' '}
-              <KeyRound
-                size={32}
-                strokeWidth={1}
-              />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Logowanie</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </Link>
+
+      <Logout session={session} />
+
       <Link
         href='/'
         className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200'
