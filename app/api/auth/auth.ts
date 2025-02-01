@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { User } from '@/lib/models'
 import connectToDb from '@/lib/connectToDb'
 import bcrypt from 'bcryptjs'
-import type { NextAuthConfig } from 'next-auth/next'
-const validateCredentials = (username: unknown, password: unknown): boolean => {
+import type {User as UserType} from '@/lib/models'
+const validateCredentials = async (username: unknown, password: unknown): Promise<boolean> => {
   return (
     typeof username === 'string' &&
     typeof password === 'string' &&
@@ -15,7 +16,7 @@ const validateCredentials = (username: unknown, password: unknown): boolean => {
 
 const authenticateUser = async (username: string, password: string) => {
   await connectToDb()
-  const user = await User.findOne({ username }) as User
+  const user = (await User.findOne({ username })) as UserType
   return user && (await bcrypt.compare(password, user.password)) ? user : null
 }
 
@@ -36,19 +37,21 @@ export const authOptions = {
         }
 
         try {
-          const user = await authenticateUser(username as string, password as string)
+          const user = await authenticateUser(
+            username as string,
+            password as string
+          )
 
           if (!user) throw new Error('User not found or incorrect password')
 
-          // Usuwamy `password` przed zwróceniem użytkownika
           return {
             id: user._id.toString(),
             username: user.username,
             email: user.email,
-            img: user.img, // Jeśli masz zdjęcie profilowe
-            isAdmin: user.isAdmin, // Jeśli masz uprawnienia admina
-          } 
-        }catch (err) {
+            img: user.img,
+            isAdmin: user.isAdmin,
+          }
+        } catch (err) {
           throw new Error(err instanceof Error ? err.message : String(err))
         }
       },
@@ -56,7 +59,7 @@ export const authOptions = {
   ],
 
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user }: any) {
       if (user) {
         token.id = user.id
         token.username = user.username
@@ -67,7 +70,7 @@ export const authOptions = {
       return token
     },
 
-    async session({ session, token }) {
+    async session({ session, token }: any) {
       session.user = {
         id: token.id as string,
         username: token.username as string,
@@ -78,7 +81,7 @@ export const authOptions = {
       return session
     },
 
-    async redirect({ url, baseUrl }) {
+    async redirect({ baseUrl }: any) {
       return baseUrl
     },
   },
@@ -89,9 +92,8 @@ export const authOptions = {
     maxAge: 30 * 24 * 60 * 60, // 30 dni
   },
 }
-  
 
-const authOptionsFixed: NextAuthConfig  = {
+const authOptionsFixed: any = {
   ...authOptions,
   providers: Array.from(authOptions.providers),
 }
