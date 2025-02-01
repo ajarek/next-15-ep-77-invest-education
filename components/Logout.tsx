@@ -11,15 +11,7 @@ import { KeyRound, UserCheck } from 'lucide-react'
 
 import "next-auth"
 
-declare module "next-auth" {
-  interface Session {
-    user: {
-      username?: string;
-      email?: string;
-      // ... existing code ...
-    }
-  }
-}
+
 
 const Logout = async ({ session }: { session: Session | null }) => {
  
@@ -59,7 +51,7 @@ const Logout = async ({ session }: { session: Session | null }) => {
              <UserCheck size={32} strokeWidth={1} />
              </TooltipTrigger>
              <TooltipContent>
-               <p> {session.user?.username  || 'Użytkownik'}</p>
+               <p> {session.user?.name  || 'Użytkownik'}</p>
              </TooltipContent>
            </Tooltip>
          </TooltipProvider>
