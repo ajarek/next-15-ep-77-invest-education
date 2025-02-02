@@ -12,7 +12,7 @@ export function SignIn() {
         'use server'
         await signIn('credentials', formData)
       }}
-      className='p-4 flex flex-col items-center rounded-lg shadow-lg gap-4 min-w-[300px]'
+      className='p-4  flex flex-col items-center rounded-lg border-2 shadow-xl gap-4 min-w-[300px]'
     >
       <div className='flex justify-center p-2'>
         <Link href='/'>
@@ -45,13 +45,13 @@ export function SignIn() {
       </Label>
       <Button
         type='submit'
-        className='w-full'
+        className='w-full bg-[#0E78F9] text-white hover:bg-[#0E78F9]/90'
       >
         Zaloguj
       </Button>
       <Link
         href='/register'
-        className='text-black'
+        className=''
       >
         Nie masz konta? <b className='text-[#0E78F9]'>Zarejestruj się</b>
       </Link>

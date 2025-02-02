@@ -10,7 +10,7 @@ const Signout = () => {
         'use server'
         await signOut()
       }}
-      className='p-4 bg-white flex flex-col items-center rounded-lg shadow-lg gap-4 min-w-[300px]'
+      className='p-4  flex flex-col items-center rounded-lg border-2 shadow-xl gap-4 min-w-[300px]'
     >
       <div className='flex justify-center p-2'>
         <Link href='/'>

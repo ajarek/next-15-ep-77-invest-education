@@ -39,7 +39,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <div className='p-4 bg-white flex flex-col items-center rounded-lg shadow-lg'>
+    <div className='p-4  flex flex-col items-center rounded-lg border-2 shadow-xl gap-4 min-w-[300px]'>
       <div className='flex justify-center p-2'>
         <Link href='/'>
           <Image
@@ -60,28 +60,28 @@ const RegisterForm = () => {
           placeholder='Imię'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className='bg-white'
+          className=''
         />
         <Input
           type='email'
           placeholder='Email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className='bg-white'
+          className=''
         />
         <Input
           type='password'
           placeholder='Hasło'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className='bg-white'
+          className=''
         />
         <Input
           type='text'
           placeholder='Twoje foto (opcjonalnie)'
           value={img}
           onChange={(e) => setImage(e.target.value)}
-          className='bg-white'
+          className=''
         />
         <Input
           type='hidden'
@@ -89,7 +89,7 @@ const RegisterForm = () => {
           value={`${DEFAULT_IS_ADMIN}`}
         />
         <Button
-          className=''
+         className='w-full bg-[#0E78F9] text-white hover:bg-[#0E78F9]/90'
           type='submit'
         >
           Zarejestruj się

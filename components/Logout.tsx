@@ -51,7 +51,7 @@ const Logout = async ({ session }: { session: Session | null }) => {
              <UserCheck size={32} strokeWidth={1} />
              </TooltipTrigger>
              <TooltipContent>
-               <p> {session.user?.name  || 'Użytkownik'}</p>
+               <p className='capitalize'> {session.user?.name  || 'Użytkownik'}</p>
              </TooltipContent>
            </Tooltip>
          </TooltipProvider>
