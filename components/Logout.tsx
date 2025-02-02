@@ -22,7 +22,7 @@ const Logout = async ({ session }: { session: Session | null }) => {
       ) : (
         <Link
         href='/login'
-        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200 '
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500  transition-all delay-200 '
       >
         <TooltipProvider>
           <Tooltip>

@@ -22,29 +22,19 @@ const AboutUs = async () => {
 
         <div className='space-y-2'>
           <h1 className='text-4xl font-bold '>O Nas</h1>
-
+         
           <ul className='text-lg  space-y-2'>
             Dlaczego warto wybrać nas?
             <li>
-              <b>Bogata oferta:</b> Posiadamy szeroki wybór używanych domów
-              jednorodzinnych na terenie całej Polski. Znajdziemy dla Ciebie
-              nieruchomość spełniającą wszystkie Twoje oczekiwania.
+              <b>Praktyczna wiedza:</b> Nasze kursy łączą teorię z praktyką. Dzięki licznym projektom i zadaniom, zdobędziesz umiejętności, które będziesz mógł wykorzystać od razu po ukończeniu kursu.
             </li>
             <li>
-              <b>Indywidualne podejście:</b> Każdy klient jest dla nas
-              wyjątkowy. Dzięki dogłębnej rozmowie poznamy Twoje potrzeby i
-              oczekiwania, a następnie przedstawimy Ci dopasowane oferty.
+              <b>Doświadczeni trenerzy:</b> Nasi trenerzy to praktycy, którzy na co dzień pracują w branży IT. Przekażą Ci swoją wiedzę i doświadczenie w przystępny sposób.
             </li>
             <li>
-              <b>Kompleksowa obsługa:</b> Pomagamy nie tylko w znalezieniu
-              wymarzonego domu, ale również w załatwieniu wszystkich formalności
-              związanych z zakupem, w tym uzyskaniu kredytu hipotecznego.
+              <b>Indywidualne podejście:</b> Nasze kursy są stale aktualizowane, abyś miał dostęp do najnowszych technologii i trendów w dziedzinie programowania i sztucznej inteligencji.
             </li>
-            <li>
-              <b> Wsparcie na każdym etapie:</b> Jesteśmy z Tobą w procesie
-              zakupu. Od pierwszego kontaktu, aż po przekazanie kluczy do nowego
-              domu.
-            </li>
+           
             Chcesz zmienić swoje życie? Skontaktuj się z nami już dziś.
           </ul>
           <div className='flex justify-end'>

@@ -18,7 +18,7 @@ const SidebarLeft = async () => {
   return (
     <div className='min-h-[calc(100vh-32px)] max-w-16 w-full rounded-xl px-4 py-8 gap-8 flex flex-col items-center bg-primary'>
       <div
-        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center   transition-all delay-200'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500   transition-all delay-200'
       >
         <TooltipProvider>
           <Tooltip>
@@ -35,8 +35,8 @@ const SidebarLeft = async () => {
       <Logout session={session} />
 
       <Link
-        href='/'
-        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center   transition-all delay-200'
+        href='/cart'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500  transition-all delay-200'
       >
         <TooltipProvider>
           <Tooltip>
@@ -55,7 +55,7 @@ const SidebarLeft = async () => {
       </Link>
       <Link
         href='/'
-        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center   transition-all delay-200'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500  transition-all delay-200'
       >
         <TooltipProvider>
           <Tooltip>
@@ -73,8 +73,8 @@ const SidebarLeft = async () => {
         </TooltipProvider>
       </Link>
       <Link
-        href='/'
-        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center   transition-all delay-200'
+        href='/contact'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500  transition-all delay-200'
       >
         <TooltipProvider>
           <Tooltip>
@@ -92,8 +92,8 @@ const SidebarLeft = async () => {
         </TooltipProvider>
       </Link>
       <Link
-        href='/'
-        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center   transition-all delay-200'
+        href='/about'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500  transition-all delay-200'
       >
         <TooltipProvider>
           <Tooltip>
