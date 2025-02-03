@@ -13,8 +13,6 @@ import { auth } from '@/app/api/auth/auth'
 
 const SidebarLeft = async () => {
   const session = await auth()
-  
-  console.log(session)
   return (
     <div className='min-h-[calc(100vh-32px)] max-w-16 w-full rounded-xl px-4 py-8 gap-8 flex flex-col items-center bg-primary'>
       <div
