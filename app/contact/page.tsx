@@ -17,7 +17,7 @@ const Contact = async () => {
         height={400}
       />
       <ContactForm
-        nameUser={session.user?.email?.split('@')[0].toUpperCase() || ''}
+        nameUser={session.user?.name || ''}
         emailUser={session.user?.email || ''}
       />
     </div>

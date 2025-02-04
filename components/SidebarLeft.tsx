@@ -1,4 +1,10 @@
-import { ShoppingBasket, House,  Contact, Users } from 'lucide-react'
+import {
+  ShoppingBasket,
+  House,
+  Contact,
+  Users,
+  BookOpenText,
+} from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { ModeToggle } from './ModeToggle'
@@ -14,10 +20,8 @@ import { auth } from '@/app/api/auth/auth'
 const SidebarLeft = async () => {
   const session = await auth()
   return (
-    <div className='min-h-[calc(100vh-32px)] max-w-16 w-full rounded-xl px-4 py-8 gap-8 flex flex-col items-center bg-primary'>
-      <div
-        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500   transition-all delay-200'
-      >
+    <div className='min-h-[calc(100vh-32px)] max-w-16 w-full rounded-xl py-4 gap-6 flex flex-col items-center bg-primary'>
+      <div className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500   transition-all delay-200'>
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger>
@@ -66,6 +70,25 @@ const SidebarLeft = async () => {
             </TooltipTrigger>
             <TooltipContent>
               <p>Strona główna</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </Link>
+      <Link
+        href='/courses'
+        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500  transition-all delay-200'
+      >
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              {' '}
+              <BookOpenText
+                size={32}
+                strokeWidth={1}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Kursy</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

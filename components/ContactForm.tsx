@@ -61,8 +61,8 @@ export default function ContactForm({
         {isSubmitted ? (
           <div className='flex flex-col items-center justify-center space-y-4'>
             <Check className='h-12 w-12 text-green-500' />
-            <p className='text-lg text-center font-semibold'>
-              {nameUser.toUpperCase()}, Dziękujemy za wiadomość!
+            <p className='text-lg text-center font-semibold capitalize'>
+              {nameUser}, Dziękujemy za wiadomość!
             </p>
             <Button
               onClick={() => setIsSubmitted(false)}
@@ -87,7 +87,7 @@ export default function ContactForm({
                 id='name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className={errors.name ? 'border-red-500' : ''}
+                className={errors.name ? 'border-red-500 ' : ''}
               />
               {errors.name && (
                 <p className='text-sm text-red-500 mt-1'>{errors.name}</p>
