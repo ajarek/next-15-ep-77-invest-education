@@ -1,6 +1,6 @@
 import MotionImage from '@/components/MotionImage'
 import MotionLink from '@/components/MotionLink'
-import { Button } from '@/components/ui/button'
+
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
           <div className='self-end flex 2 pr-12'>
 
           <MotionLink
-            label='Zamów kurs'
+            label='Kup kurs'
             href='/courses'
            
           />

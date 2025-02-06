@@ -13,34 +13,34 @@
     {
       "id": 2,
       "title": "Podstawy uczenia maszynowego",
-      "type": "Sztuczna inteligencja",
+      "type": "AI",
       "description": "Wprowadzenie do uczenia maszynowego i jego zastosowań",
       "numberOfStudents": 1200,
       "price": 399.99,
       "ranking": 4.7,
-      "courseIcon": "icons/laptop.svg",
+      "courseIcon": "icons/brain.svg",
       "color": "#87CEEB"
     },
     {
       "id": 3,
-      "title": "JavaScript Advanced",
+      "title": "JavaScript Zaawansowany Kurs",
       "type": "Programowanie",
       "description": "Zaawansowane techniki programowania w JavaScript",
       "numberOfStudents": 950,
       "price": 349.99,
       "ranking": 4.6,
-      "courseIcon": "icons/laptop.svg",
+      "courseIcon": "icons/atom.svg",
       "color": "#F0E68C"
     },
     {
       "id": 4,
-      "title": "Deep Learning Masterclass",
-      "type": "Sztuczna inteligencja",
+      "title": "Mistrzowska klasa głębokiego uczenia się i sieci neuronowych",
+      "type": "AI",
       "description": "Kompleksowy kurs głębokiego uczenia i sieci neuronowych",
       "numberOfStudents": 800,
       "price": 499.99,
       "ranking": 4.9,
-      "courseIcon": "icons/laptop.svg",
+      "courseIcon": "icons/package.svg",
       "color": "#98FB98"
     },
     {
@@ -56,13 +56,13 @@
     },
     {
       "id": 6,
-      "title": "Natural Language Processing",
-      "type": "Sztuczna inteligencja",
+      "title": "Przetwarzanie języka naturalnego",
+      "type": "AI",
       "description": "Przetwarzanie języka naturalnego i analiza tekstu",
       "numberOfStudents": 600,
       "price": 379.99,
       "ranking": 4.7,
-      "courseIcon": "icons/laptop.svg",
+      "courseIcon": "icons/sparkles.svg",
       "color": "#F08080"
     },
     {
@@ -79,12 +79,12 @@
     {
       "id": 8,
       "title": "Wizja komputerowa",
-      "type": "Sztuczna inteligencja",
+      "type": "AI",
       "description": "Widzenie komputerowe i przetwarzanie obrazu",
       "numberOfStudents": 550,
       "price": 459.99,
       "ranking": 4.8,
-      "courseIcon": "icons/laptop.svg",
+      "courseIcon": "icons/sparkles.svg",
       "color": "#FFA07A"
     },
     {
@@ -95,40 +95,40 @@
       "numberOfStudents": 1300,
       "price": 329.99,
       "ranking": 4.7,
-      "courseIcon": "icons/laptop.svg",
+      "courseIcon": "icons/atom.svg",
       "color": "#87CEFA"
     },
     {
       "id": 10,
-      "title": "Reinforcement Learning",
-      "type": "Sztuczna inteligencja",
+      "title": "Uczenie się przez wzmacnianie",
+      "type": "AI",
       "description": "Uczenie ze wzmocnieniem w sztucznej inteligencji",
       "numberOfStudents": 400,
       "price": 479.99,
       "ranking": 4.6,
-      "courseIcon": "icons/laptop.svg",
+      "courseIcon": "icons/sparkles.svg",
       "color": "#DEB887"
     },
     {
       "id": 11,
-      "title": "Data Structures & Algorithms",
+      "title": "Struktury danych i algorytmy",
       "type": "Programowanie",
       "description": "Struktury danych i algorytmy w programowaniu",
       "numberOfStudents": 950,
       "price": 389.99,
       "ranking": 4.8,
-      "courseIcon":"icons/laptop.svg",
+      "courseIcon":"icons/brain.svg",
       "color": "#B0E0E6"
     },
     {
       "id": 12,
       "title": "AI dla robotyki",
-      "type": "Sztuczna inteligencja",
+      "type": "AI",
       "description": "Sztuczna inteligencja w robotyce i automatyce",
       "numberOfStudents": 350,
       "price": 549.99,
       "ranking": 4.9,
-      "courseIcon": "icons/laptop.svg",
+      "courseIcon": "icons/package.svg",
       "color": "#FFB6C1"
     }
   ]

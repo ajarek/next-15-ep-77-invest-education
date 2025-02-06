@@ -20,7 +20,7 @@ import { auth } from '@/app/api/auth/auth'
 const SidebarLeft = async () => {
   const session = await auth()
   return (
-    <div className='min-h-[calc(100vh-32px)] max-w-16 w-full rounded-xl py-4 gap-6 flex flex-col items-center bg-primary'>
+    <div className='min-h-[calc(100vh-32px)] max-w-16 max-h-[500px] w-full rounded-xl py-4 gap-6 flex flex-col items-center bg-primary'>
       <div className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500   transition-all delay-200'>
         <TooltipProvider>
           <Tooltip>
