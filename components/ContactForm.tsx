@@ -66,7 +66,7 @@ export default function ContactForm({
             </p>
             <Button
               onClick={() => setIsSubmitted(false)}
-              className='mt-4'
+              className='mt-4 hover:bg-primary hover:scale-110 transition-all duration-1000 ease-in-out'
             >
               Wyślij kolejną wiadomość
             </Button>

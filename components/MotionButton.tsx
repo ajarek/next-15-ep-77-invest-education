@@ -20,6 +20,7 @@ const MotionButton = ({ label, typeButton }: PropsButton) => {
       <Button
         type={typeButton}
         aria-label={label}
+        className='hover:bg-primary'
       >
         {label} <TrendingUp size={32} />
       </Button>

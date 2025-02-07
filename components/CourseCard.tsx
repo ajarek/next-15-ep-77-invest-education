@@ -1,4 +1,4 @@
-import React from 'react'
+"use client"
 import {
   Card,
   CardContent,
@@ -7,13 +7,16 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import Image from 'next/image'
-import { Button } from './ui/button'
+
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { useCartStore } from "@/store/cartStore"
+import { useRouter } from "next/navigation"
+import type { Item } from "@/store/cartStore"
 
 type CourseCardProps = {
   id: number
@@ -38,6 +41,17 @@ const CourseCard: React.FC<CourseCardProps> = ({
   color,
   price,
 }) => {
+
+  const { addItemToCart, items } = useCartStore()
+  const router = useRouter()
+
+  const handleCart = (item: Item) => {
+    if (items.some((i) => i.id === item.id)) return
+    const newItem = { ...item }
+    addItemToCart(newItem)
+    router.push("/cart")
+    
+  }
   return (
     <Card
       className={`w-full  justify-between text-black shadow-xl`}
@@ -82,14 +96,24 @@ const CourseCard: React.FC<CourseCardProps> = ({
           </div>
           <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger>
-            <Button
-            size={'icon'}
-            variant={'outline'}
-            className='w-[40px] h-[40px] flex items-center justify-center bg-white rounded-full text-2xl'
-          >
+            <TooltipTrigger  className='w-[40px] h-[40px] flex items-center justify-center bg-white rounded-full text-2xl' 
+             onClick={() =>
+              handleCart({
+                id: Number(id) || 0,
+                title: title || "",
+                price: price || 0,
+                type: type || "",
+                ranking: ranking || 0,
+                numberOfStudents: numberOfStudents || 0,
+                description: description || "",
+                color: color || "",
+                courseIcon: courseIcon || "",
+                
+              })
+            }  >
+           
             🛒
-          </Button>
+         
             </TooltipTrigger>
             <TooltipContent>
               <div className='text-lg'>Dodaj do koszyka</div>
