@@ -59,7 +59,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
     >
       <CardHeader>
         <CardTitle className=' flex items-center justify-between'>
-          <div className='flex items-center gap-2'>
+          <div className='flex  items-center gap-2'>
             <div className='w-[40px] h-[40px] flex items-center justify-center bg-white rounded-full'>
               <Image
                 src={courseIcon || ''}
@@ -70,7 +70,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
             </div>
             <p className='text-lg font-thin'> {type}</p>
           </div>
-          <div className='w-[70px] h-[40px] flex items-center justify-center bg-white rounded-full'>
+          <div className='w-[70px] h-[40px] flex  items-center justify-center bg-white rounded-full'>
             <Image
               src='/icons/team.svg'
               alt={title}

@@ -2,7 +2,7 @@
     {
       "id": 1,
       "title": "Python Programowanie Podstawy",
-      "type": "Programowanie",
+      "type": "PR",
       "description": "Podstawowy kurs programowania w Pythonie dla początkujących",
       "numberOfStudents": 1500,
       "price": 299.99,
@@ -24,7 +24,7 @@
     {
       "id": 3,
       "title": "JavaScript Zaawansowany Kurs",
-      "type": "Programowanie",
+      "type": "PR",
       "description": "Zaawansowane techniki programowania w JavaScript",
       "numberOfStudents": 950,
       "price": 349.99,
@@ -46,7 +46,7 @@
     {
       "id": 5,
       "title": "Java Rozwój Przedsiębiorczości",
-      "type": "Programowanie",
+      "type": "PR",
       "description": "Tworzenie aplikacji korporacyjnych w Java",
       "numberOfStudents": 1100,
       "price": 449.99,
@@ -68,7 +68,7 @@
     {
       "id": 7,
       "title": "C++ Tworzenie Gier",
-      "type": "Programowanie",
+      "type": "PR",
       "description": "Tworzenie gier komputerowych w C++",
       "numberOfStudents": 750,
       "price": 429.99,
@@ -90,7 +90,7 @@
     {
       "id": 9,
       "title": "React Rozwój sieci WWW",
-      "type": "Programowanie", 
+      "type": "PR", 
       "description": "Tworzenie aplikacji webowych w React",
       "numberOfStudents": 1300,
       "price": 329.99,
@@ -112,7 +112,7 @@
     {
       "id": 11,
       "title": "Struktury danych i algorytmy",
-      "type": "Programowanie",
+      "type": "PR",
       "description": "Struktury danych i algorytmy w programowaniu",
       "numberOfStudents": 950,
       "price": 389.99,

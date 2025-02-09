@@ -27,7 +27,7 @@ const Cart = () => {
                 <div className='w-full text-start'>{item.title}</div>
                
                 <div> {item.type}</div>
-                <div>⭐ {item.ranking}</div>
+                <div className="max-sm:hidden">⭐ {item.ranking}</div>
 
                 <div className=' max-sm:hidden'>PLN {item.price.toFixed(2)}</div>
 
@@ -46,7 +46,8 @@ const Cart = () => {
           <div className='w-full flex items-center justify-end text-xl mt-4 px-4'>
             Razem : PLN {total().toFixed(2)}
           </div>
-          <div className='flex w-full justify-end gap-8 mt-8 px-4 '>
+          <div className='flex w-full justify-end gap-8 p-4 '>
+            <div className='grid grid-cols-2 max-sm:grid-cols-1 gap-8'>
             <Button
               variant='destructive'
               onClick={() => removeAll()}
@@ -57,9 +58,16 @@ const Cart = () => {
             <Button
               onClick={() => router.push("/payment")}
               aria-label='go to payment'
+              className='hover:bg-orange-200'
             >
               Kupuję Kurs/Kursy
             </Button>
+
+
+
+
+            </div>
+            
           </div>
         </>
       ) : (

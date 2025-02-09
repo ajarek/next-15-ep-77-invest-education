@@ -3,12 +3,11 @@ import { Bell, Settings } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
-const SidebarRight = async () => {
+const MyCourses =async () => {
   const session = await auth()
 
   return (
-    <div className='fixed top-0 right-0 min-h-[calc(100vh-32px)] max-w-72 w-full max-h-[500px]  flex flex-col bg-primary text-black rounded-xl gap-4 p-4 max-lg:hidden'>
+    <div className='min-h-[calc(100vh-32px)]  w-full  flex flex-col    gap-4 p-4 lg:hidden'>
       <div className='flex justify-between items-center'>
         <Bell />
         <Settings />
@@ -32,7 +31,7 @@ const SidebarRight = async () => {
             Logowanie</Link>
 
         ) : (
-          <div className=' max-h-[350px] flex flex-col gap-4 overflow-y-auto p-2 scrollbar'>
+          <div className='  flex flex-col gap-4 '>
             <div className='w-full min-h-[150px] bg-white rounded-xl p-4 text-black text-sm shadow-xl '>
               kurs1
             </div>
@@ -64,4 +63,5 @@ const SidebarRight = async () => {
   )
 }
 
-export default SidebarRight
+
+export default MyCourses
