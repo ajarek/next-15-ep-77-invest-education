@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 const NotFoundPage = () => {
   const router = useRouter()
   return (
-    <div className='w-full container min-h-[calc(100vh-(32px*2+48px))] flex flex-col items-center justify-center bg-secondary gap-4 p-4'>
+    <div className='w-full min-h-[calc(100vh-32px)] flex flex-col items-center justify-start gap-4 p-2'>
       <Image
         src='/notfound.jpeg'
         alt='404'
@@ -28,6 +28,7 @@ const NotFoundPage = () => {
             router.push('/')
           }}
           aria-label='Go tony głównej'
+          className='hover:bg-red-200'
         >
           Powrót do strony głównej
         </Button>
