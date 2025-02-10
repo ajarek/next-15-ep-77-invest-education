@@ -2,11 +2,12 @@ import { auth } from '@/app/api/auth/auth'
 import { Bell, Settings } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import courses from '@/data/courses.json'
 
 const SidebarRight = async () => {
   const session = await auth()
-
+  const courseId = '1,2'.split(','); 
+const userCourses = courses.filter((course) => courseId.includes(course.id.toString()));
   return (
     <div className='fixed top-0 right-0 min-h-[calc(100vh-32px)] max-w-72 w-full max-h-[500px]  flex flex-col bg-primary text-black rounded-xl gap-4 p-4 max-lg:hidden'>
       <div className='flex justify-between items-center'>
@@ -33,30 +34,9 @@ const SidebarRight = async () => {
 
         ) : (
           <div className=' max-h-[350px] flex flex-col gap-4 overflow-y-auto p-2 scrollbar'>
-            <div className='w-full min-h-[150px] bg-white rounded-xl p-4 text-black text-sm shadow-xl '>
-              kurs1
-            </div>
-            <div className='w-full min-h-[150px] bg-red-300 rounded-xl p-4 text-black text-sm shadow-xl '>
-              kurs2
-            </div>
-            <div className='w-full min-h-[150px] bg-green-300 rounded-xl p-4 text-black text-sm shadow-xl '>
-              kurs3
-            </div>
-            <div className='w-full min-h-[150px] bg-blue-600 rounded-xl p-4 text-black text-sm shadow-xl '>
-              kurs4
-            </div>
-            <div className='w-full min-h-[150px] bg-amber-500 rounded-xl p-4 text-black text-sm shadow-xl '>
-              kurs5
-            </div>
-            <div className='w-full min-h-[150px] bg-violet-300 rounded-xl p-4 text-black text-sm shadow-xl '>
-              kurs6
-            </div>
-            <div className='w-full min-h-[150px] bg-yellow-300 rounded-xl p-4 text-black text-sm shadow-xl '>
-              kurs7
-            </div>
-            <div className='w-full min-h-[150px] bg-rose-600 rounded-xl p-4 text-black text-sm shadow-xl '>
-              kurs8
-            </div>
+            {userCourses.map((course) => (   <Link key={course.id} href={`/course/${course.id}`} className='bg-secondary text-secondary-foreground rounded-lg  flex justify-center items-center p-2 hover:border-2    border-blue-500  transition-all delay-200 '>
+              {course.title}</Link>
+              ))}
           </div>
         )}
       </div>

@@ -4,44 +4,42 @@ import { useRouter } from 'next/navigation'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
-import { useToast } from '@/hooks/use-toast'
 import { useCartStore } from '@/store/cartStore'
+import { addCourse } from "@/lib/action"
+import type {Course as CourseType} from '@/lib/models'
 
-const FormPayment = ({ nameUser }: { nameUser: string }) => {
+
+
+const FormPayment = () => {
   const { items, total, removeAll } = useCartStore()
   const router = useRouter()
-  const { toast } = useToast()
+  
 
-  const toastAlert = () => {
-    toast({
-      variant: 'default',
-      title:
-        'Zapłacono ' +
-        total().toLocaleString('pl', { style: 'currency', currency: 'PLN' }),
-      description: 'Dziękujemy za zakupy ' + nameUser.toUpperCase(),
-    })
-  }
+  
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    toastAlert()
-    removeAll()
-    setTimeout(() => {
-      router.push('/')
-    }, 3000)
-  }
+  
 
   return (
     <div className=' w-full min-h-[calc(100vh-194px)]  flex flex-col justify-center max-sm:justify-start p-4 items-center  '>
       {items.length > 0 ? (
         <form
-          onSubmit={handleSubmit}
+        action={async (formData: FormData) => {
+          const noteData:CourseType = {
+          
+            id: formData.get("id") as string  ,
+          }
+          await addCourse(noteData)
+           removeAll()
+          router.push("/")
+        }}
           className='max-w-[480px] w-full   p-4  rounded-lg border-2 border-gray-400  shadow-sm shadow-gray-400'
         >
+          <input type="hidden" name="id" value={items.map((item) => item.id).join(',')} />
           <div className='w-100%'>
             <Label htmlFor='cardNumber'>Do zapłaty</Label>
             <Input
               type='text'
+             
               value={total().toLocaleString('pl', {
                 style: 'currency',
                 currency: 'PLN',

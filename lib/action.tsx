@@ -1,10 +1,11 @@
 'use server'
 
 import connectToDb from './connectToDb'
-import { User, UserWithoutId } from './models'
+import { User, UserWithoutId, Course } from './models'
 import { revalidatePath } from 'next/cache'
 import bcrypt from 'bcryptjs'
 import { redirect } from 'next/navigation'
+import type { Course as CourseType } from './models'
 
 export const addUser = async (formData: UserWithoutId) => {
   const { username, email, password, img, isAdmin } = formData
@@ -65,5 +66,18 @@ export const updateUser = async (formData: FormData) => {
     return { message: 'Failed to update to db' + err }
   } finally {
     redirect('/')
+  }
+}
+
+export const addCourse = async (data: CourseType) => {
+  console.log(data)
+  try {
+    await connectToDb()
+    const newNote = new Course(data)
+    await newNote.save()
+    revalidatePath('/')
+    console.log('Note saved:', newNote)
+  } catch (err) {
+    console.error('Failed to save note:', err)
   }
 }
