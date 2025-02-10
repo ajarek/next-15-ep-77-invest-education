@@ -81,3 +81,13 @@ export const addCourse = async (data: CourseType) => {
     console.error('Failed to save note:', err)
   }
 }
+
+export const getAllCourses = async () => {
+  try {
+    await connectToDb()
+    const course = await Course.find({})
+    return course
+  } catch (err) {
+    console.log(err)
+  }
+}

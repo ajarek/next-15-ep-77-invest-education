@@ -13,7 +13,7 @@ export type UserWithoutId = Omit<User, '_id'>
 export type Course = {
  
   id: string
-  
+  email: string
 }
 
 const userSchema = new mongoose.Schema(
@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema(
 const courseSchema = new mongoose.Schema(
   {
    id: { type: String, required: true, unique: true, min:1, max: 20 },
-
+   email: { type: String, required: true, unique: true, min: 3, max: 50 },
   },
   { timestamps: true }
 )

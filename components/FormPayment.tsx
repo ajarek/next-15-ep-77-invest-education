@@ -5,41 +5,41 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { useCartStore } from '@/store/cartStore'
-import { addCourse } from "@/lib/action"
-import type {Course as CourseType} from '@/lib/models'
+import { addCourse } from '@/lib/action'
+import type { Course as CourseType } from '@/lib/models'
 
+type PropsFormPayment = {
+  emailUser: string
+}
 
-
-const FormPayment = () => {
+const FormPayment = ({ emailUser }: PropsFormPayment) => {
   const { items, total, removeAll } = useCartStore()
   const router = useRouter()
-  
-
-  
-
-  
 
   return (
     <div className=' w-full min-h-[calc(100vh-194px)]  flex flex-col justify-center max-sm:justify-start p-4 items-center  '>
       {items.length > 0 ? (
         <form
-        action={async (formData: FormData) => {
-          const noteData:CourseType = {
-          
-            id: formData.get("id") as string  ,
-          }
-          await addCourse(noteData)
-           removeAll()
-          router.push("/")
-        }}
+          action={async (formData: FormData) => {
+            const noteData: CourseType = {
+              email: emailUser as string,
+              id: formData.get('id') as string,
+            }
+            await addCourse(noteData)
+            removeAll()
+            router.push('/')
+          }}
           className='max-w-[480px] w-full   p-4  rounded-lg border-2 border-gray-400  shadow-sm shadow-gray-400'
         >
-          <input type="hidden" name="id" value={items.map((item) => item.id).join(',')} />
+          <input
+            type='hidden'
+            name='id'
+            value={items.map((item) => item.id).join(',')}
+          />
           <div className='w-100%'>
             <Label htmlFor='cardNumber'>Do zapłaty</Label>
             <Input
               type='text'
-             
               value={total().toLocaleString('pl', {
                 style: 'currency',
                 currency: 'PLN',
@@ -84,7 +84,7 @@ const FormPayment = () => {
               aria-label='I order and pay'
               className='hover:bg-red-200 '
             >
-             Zamawiam i Płacę
+              Zamawiam i Płacę
             </Button>
           </div>
         </form>

@@ -13,7 +13,7 @@ const Payment = async () => {
 
   return (
     <>
-      <PaymentForm nameUser={user?.name || ""} />
+      <PaymentForm emailUser={user?.email|| ""} />
     </>
   )
 }

@@ -3,11 +3,15 @@ import { Bell, Settings } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import courses from '@/data/courses.json'
-
+import { getAllCourses } from "@/lib/action"
 const SidebarRight = async () => {
   const session = await auth()
-  const courseId = '1,2'.split(','); 
-const userCourses = courses.filter((course) => courseId.includes(course.id.toString()));
+  const coursesUser  = await getAllCourses() 
+  const filterCourses = coursesUser.filter((course) => course.email === session?.user?.email)
+ const lol = filterCourses.map((course) => course.id) as string[]
+ const lol2 = lol.join().trim().split(',')
+console.log(lol2)
+const userCourses = courses.filter((course) => lol2?.includes(course.id.toString()));
   return (
     <div className='fixed top-0 right-0 min-h-[calc(100vh-32px)] max-w-72 w-full max-h-[500px]  flex flex-col bg-primary text-black rounded-xl gap-4 p-4 max-lg:hidden'>
       <div className='flex justify-between items-center'>
@@ -34,7 +38,7 @@ const userCourses = courses.filter((course) => courseId.includes(course.id.toStr
 
         ) : (
           <div className=' max-h-[350px] flex flex-col gap-4 overflow-y-auto p-2 scrollbar'>
-            {userCourses.map((course) => (   <Link key={course.id} href={`/course/${course.id}`} className='bg-secondary text-secondary-foreground rounded-lg  flex justify-center items-center p-2 hover:border-2    border-blue-500  transition-all delay-200 '>
+            {userCourses.map((course) => (   <Link key={course.id} href={`/course/${course.id}`} className='  rounded-lg  flex justify-center border-2 border-primary items-center p-2 hover:border-blue-500  transition-all delay-200 ' style={{backgroundColor: course.color}}>
               {course.title}</Link>
               ))}
           </div>
