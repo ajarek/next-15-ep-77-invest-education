@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/tooltip'
 import Logout from './Logout'
 import { auth } from '@/app/api/auth/auth'
+import CartSidebarLeft from './CartSidebarLeft'
 
 const SidebarLeft = async () => {
   const session = await auth()
@@ -35,26 +36,8 @@ const SidebarLeft = async () => {
       </div>
 
       <Logout session={session} />
-
-      <Link
-        href='/cart'
-        className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500  transition-all delay-200'
-      >
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger>
-              {' '}
-              <ShoppingBasket
-                size={32}
-                strokeWidth={1}
-              />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Koszyk</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </Link>
+      <CartSidebarLeft/>
+      
       <Link
         href='/'
         className='bg-secondary w-10 h-10 rounded-full flex justify-center items-center hover:border-2 border-blue-500  transition-all delay-200'

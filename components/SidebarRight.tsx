@@ -7,11 +7,11 @@ import { getAllCourses } from "@/lib/action"
 const SidebarRight = async () => {
   const session = await auth()
   const coursesUser  = await getAllCourses() 
-  const filterCourses = coursesUser.filter((course) => course.email === session?.user?.email)
- const lol = filterCourses.map((course) => course.id) as string[]
- const lol2 = lol.join().trim().split(',')
-console.log(lol2)
-const userCourses = courses.filter((course) => lol2?.includes(course.id.toString()));
+  const filterCourses = coursesUser?.filter((course) => course.email === session?.user?.email)
+ const mapCourse = filterCourses?.map((course) => course.id) as string[]
+ const coursesId = mapCourse.join().trim().split(',')
+
+const userCourses = courses.filter((course) => coursesId?.includes(course.id.toString()));
   return (
     <div className='fixed top-0 right-0 min-h-[calc(100vh-32px)] max-w-72 w-full max-h-[500px]  flex flex-col bg-primary text-black rounded-xl gap-4 p-4 max-lg:hidden'>
       <div className='flex justify-between items-center'>
