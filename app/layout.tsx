@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang='pl' suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <ThemeProvider
           attribute='class'
@@ -37,7 +37,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className='max-w-7xl mx-auto flex py-2 pl-16 pr-72 max-lg:pr-0 max-sm:pr-2'>
+          <div className='relative max-w-7xl mx-auto flex py-2 pl-16 pr-72 max-lg:pr-0 max-sm:pr-2'>
             <SidebarLeft />
             <Toaster />
             {children}

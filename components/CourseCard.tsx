@@ -46,6 +46,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   const router = useRouter()
 
   const handleCart = (item: Item) => {
+    if(items.length>=1)return
     if (items.some((i) => i.id === item.id)) return
     const newItem = { ...item }
     addItemToCart(newItem)

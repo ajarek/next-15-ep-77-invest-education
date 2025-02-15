@@ -55,7 +55,7 @@ const SidebarRight = async () => {
                 className='  rounded-lg  flex justify-center border-2 border-primary items-center p-2 hover:border-blue-500  transition-all delay-200 '
                 style={{ backgroundColor: course.color }}
               >
-                <div className='flex items-center gap-2'>
+                <div className='w-full flex items-center justify-between gap-2'>
                   <h1>{course.title}</h1>
                   <DeleteCourse
                     _id={filterCourses?.find((c) => c.id == (course.id))?._id.toString() || ''}
