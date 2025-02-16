@@ -7,8 +7,10 @@ import bcrypt from 'bcryptjs'
 
 export const {
   auth,
-  handlers: { GET, POST }, signIn,  signOut,} = NextAuth({
- 
+  handlers: { GET, POST },
+  signIn,
+  signOut,
+} = NextAuth({
   providers: [
     CredentialsProvider({
       name: 'Credential',
@@ -37,7 +39,7 @@ export const {
   ],
 
   callbacks: {
-    async jwt({ token, user}: any) {
+    async jwt({ token, user }: any) {
       if (user) {
         return {
           ...token,

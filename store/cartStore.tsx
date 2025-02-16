@@ -1,5 +1,5 @@
-import { create } from "zustand"
-import { persist, createJSONStorage } from "zustand/middleware"
+import { create } from 'zustand'
+import { persist, createJSONStorage } from 'zustand/middleware'
 
 export type Item = {
   id: number
@@ -19,7 +19,7 @@ type ItemState = {
   removeItemFromCart: (id: number) => void
   total: () => number
   removeAll: () => void
-  
+
   removeAllFromCart: () => void
 }
 
@@ -40,14 +40,10 @@ export const useCartStore = create<ItemState>()(
 
       removeAllFromCart: () => set({ items: [] }),
 
-      total: () =>
-        get().items.reduce((acc, item) => acc + item.price , 0),
+      total: () => get().items.reduce((acc, item) => acc + item.price, 0),
       removeAll: () => set({ items: [] }),
-
-      
-      
     }),
 
-    { name: "cartStore", storage: createJSONStorage(() => localStorage) }
+    { name: 'cartStore', storage: createJSONStorage(() => localStorage) }
   )
 )

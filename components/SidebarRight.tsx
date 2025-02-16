@@ -58,7 +58,11 @@ const SidebarRight = async () => {
                 <div className='w-full flex items-center justify-between gap-2'>
                   <h1>{course.title}</h1>
                   <DeleteCourse
-                    _id={filterCourses?.find((c) => c.id == (course.id))?._id.toString() || ''}
+                    _id={
+                      filterCourses
+                        ?.find((c) => c.id == course.id)
+                        ?._id.toString() || ''
+                    }
                   />
                 </div>
               </div>

@@ -94,13 +94,13 @@ export const getAllCourses = async () => {
 
 export const deleteCourseId = async (formData: FormData) => {
   const id = formData.get('_id')
-   console.log(id)
+  console.log(id)
   try {
     await connectToDb()
     await Course.findOneAndDelete({ _id: id })
     revalidatePath('/courses')
     return { message: `Deleted record ${id}` }
   } catch (err) {
-    return { message: 'Failed to delete record'+err }
+    return { message: 'Failed to delete record' + err }
   }
 }

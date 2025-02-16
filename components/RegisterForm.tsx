@@ -89,7 +89,7 @@ const RegisterForm = () => {
           value={`${DEFAULT_IS_ADMIN}`}
         />
         <Button
-         className='w-full bg-[#0E78F9] text-white hover:bg-[#0E78F9]/90'
+          className='w-full bg-[#0E78F9] text-white hover:bg-[#0E78F9]/90'
           type='submit'
         >
           Zarejestruj się

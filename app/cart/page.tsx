@@ -1,13 +1,12 @@
-"use client"
+'use client'
 
-import React from "react"
-import { useCartStore } from "@/store/cartStore"
-import { Button } from "@/components/ui/button"
-import { useRouter } from "next/navigation"
-import Image from "next/image"
+import React from 'react'
+import { useCartStore } from '@/store/cartStore'
+import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 const Cart = () => {
-  const { items,  removeItemFromCart, total, removeAll } =
-    useCartStore()
+  const { items, removeItemFromCart, total, removeAll } = useCartStore()
   const router = useRouter()
 
   return (
@@ -20,18 +19,23 @@ const Cart = () => {
                 key={item.id}
                 className='w-full grid grid-cols-6 max-sm:grid-cols-4 items-center justify-start  border-b border-gray-500 gap-4 p-4 '
               >
-                <div className="w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center">
-
-                <Image src={item.courseIcon} alt={item.title} width={50} height={50}  />
+                <div className='w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center'>
+                  <Image
+                    src={item.courseIcon}
+                    alt={item.title}
+                    width={50}
+                    height={50}
+                  />
                 </div>
                 <div className='w-full text-start'>{item.title}</div>
-               
+
                 <div> {item.type}</div>
-                <div className="max-sm:hidden">⭐ {item.ranking}</div>
+                <div className='max-sm:hidden'>⭐ {item.ranking}</div>
 
-                <div className=' max-sm:hidden'>PLN {item.price.toFixed(2)}</div>
+                <div className=' max-sm:hidden'>
+                  PLN {item.price.toFixed(2)}
+                </div>
 
-            
                 <div className=' flex items-center justify-center'>
                   <button
                     onClick={() => removeItemFromCart(item.id)}
@@ -48,26 +52,21 @@ const Cart = () => {
           </div>
           <div className='flex w-full justify-end gap-8 p-4 '>
             <div className='grid grid-cols-2 max-sm:grid-cols-1 gap-8'>
-            <Button
-              variant='destructive'
-              onClick={() => removeAll()}
-              aria-label='remove all'
-            >
-              Usuń wszystko
-            </Button>
-            <Button
-              onClick={() => router.push("/payment")}
-              aria-label='go to payment'
-              className='hover:bg-orange-200'
-            >
-              Kupuję Kurs/Kursy
-            </Button>
-
-
-
-
+              <Button
+                variant='destructive'
+                onClick={() => removeAll()}
+                aria-label='remove all'
+              >
+                Usuń wszystko
+              </Button>
+              <Button
+                onClick={() => router.push('/payment')}
+                aria-label='go to payment'
+                className='hover:bg-orange-200'
+              >
+                Kupuję Kurs/Kursy
+              </Button>
             </div>
-            
           </div>
         </>
       ) : (
@@ -75,7 +74,7 @@ const Cart = () => {
           <h1 className='text-2xl text-center py-8'>Koszyk jest pusty !</h1>
           <Button
             className='w-fit mx-auto hover:bg-orange-200'
-            onClick={() => router.push("/courses")}
+            onClick={() => router.push('/courses')}
           >
             Przejdź do zakupów
           </Button>

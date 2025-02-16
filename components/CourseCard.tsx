@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import {
   Card,
   CardContent,
@@ -14,9 +14,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { useCartStore } from "@/store/cartStore"
-import { useRouter } from "next/navigation"
-import type { Item } from "@/store/cartStore"
+import { useCartStore } from '@/store/cartStore'
+import { useRouter } from 'next/navigation'
+import type { Item } from '@/store/cartStore'
 
 type CourseCardProps = {
   id: number
@@ -41,17 +41,15 @@ const CourseCard: React.FC<CourseCardProps> = ({
   color,
   price,
 }) => {
-
   const { addItemToCart, items } = useCartStore()
   const router = useRouter()
 
   const handleCart = (item: Item) => {
-    if(items.length>=1)return
+    if (items.length >= 1) return
     if (items.some((i) => i.id === item.id)) return
     const newItem = { ...item }
     addItemToCart(newItem)
-    router.push("/cart")
-    
+    router.push('/cart')
   }
   return (
     <Card
@@ -96,32 +94,30 @@ const CourseCard: React.FC<CourseCardProps> = ({
             Cena kursu: <h1 className='text-lg font-semibold'>{price}PLN</h1>
           </div>
           <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger  className='w-[40px] h-[40px] flex items-center justify-center bg-white rounded-full text-2xl' 
-             onClick={() =>
-              handleCart({
-                id: Number(id) || 0,
-                title: title || "",
-                price: price || 0,
-                type: type || "",
-                ranking: ranking || 0,
-                numberOfStudents: numberOfStudents || 0,
-                description: description || "",
-                color: color || "",
-                courseIcon: courseIcon || "",
-                
-              })
-            }  >
-           
-            🛒
-         
-            </TooltipTrigger>
-            <TooltipContent>
-              <div className='text-lg'>Dodaj do koszyka</div>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-         
+            <Tooltip>
+              <TooltipTrigger
+                className='w-[40px] h-[40px] flex items-center justify-center bg-white rounded-full text-2xl'
+                onClick={() =>
+                  handleCart({
+                    id: Number(id) || 0,
+                    title: title || '',
+                    price: price || 0,
+                    type: type || '',
+                    ranking: ranking || 0,
+                    numberOfStudents: numberOfStudents || 0,
+                    description: description || '',
+                    color: color || '',
+                    courseIcon: courseIcon || '',
+                  })
+                }
+              >
+                🛒
+              </TooltipTrigger>
+              <TooltipContent>
+                <div className='text-lg'>Dodaj do koszyka</div>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </CardContent>
     </Card>

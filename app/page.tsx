@@ -1,7 +1,6 @@
 import MotionImage from '@/components/MotionImage'
 import MotionLink from '@/components/MotionLink'
 
-
 export default function Home() {
   return (
     <div className='w-full min-h-[calc(100vh-32px)] flex flex-col items-center justify-start gap-4 p-2'>
@@ -17,13 +16,10 @@ export default function Home() {
             Inwestuj w swoją edukację
           </h1>
           <div className='self-end flex 2 pr-12'>
-
-          <MotionLink
-            label='Kup kurs'
-            href='/courses'
-           
-          />
-
+            <MotionLink
+              label='Kup kurs'
+              href='/courses'
+            />
           </div>
         </div>
       </div>
@@ -36,9 +32,9 @@ export default function Home() {
         dziś!
       </div>
       <MotionLink
-            label='Strefa kursów'
-            href='/courses'
-          />
+        label='Strefa kursów'
+        href='/courses'
+      />
     </div>
   )
 }
