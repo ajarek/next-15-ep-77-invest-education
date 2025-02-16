@@ -1,5 +1,4 @@
 import {
-  ShoppingBasket,
   House,
   Contact,
   Users,
